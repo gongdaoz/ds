@@ -1,0 +1,81 @@
+{
+  "core": {
+    "transport": {
+      "channel": {
+        "speed": {
+          "record": 1000,
+          "channel": 1
+        }
+      }
+    }
+  },
+  "job": {
+    "content": [
+      {
+        "reader": {
+          "parameter": {
+            "password": "KvpnnEX80DY6TGtDajfsWkg46cO2Mb",
+            "connection": [
+              {
+                "querySql": [
+                  "SELECT * FROM import2ck"
+                ],
+                "jdbcUrl": [
+                  "jdbc:odps:http://service.cn-hangzhou.maxcompute.aliyun.com/api?project=odps_create_table"
+                ]
+              }
+            ],
+            "username": "LTAI4FyFwumzxEoN3TK95hWc"
+          }
+        },
+        "writer": {
+          "parameter": {
+            "password": "123456",
+            "column": [
+              "age",
+              "job",
+              "marital",
+              "education",
+              "default",
+              "housing",
+              "loan",
+              "contact",
+              "month",
+              "day_of_week",
+              "duration",
+              "campaign",
+              "pdays",
+              "previous",
+              "poutcome",
+              "emp_var_rate",
+              "cons_price_idx",
+              "cons_conf_idx",
+              "euribor3m",
+              "nr_employed",
+              "y"
+            ],
+            "connection": [
+              {
+                "jdbcUrl": "jdbc:clickhouse://172.18.70.58:8123/default",
+                "table": [
+                  "import2ck"
+                ]
+              }
+            ],
+            "username": "ck"
+          }
+        }
+      }
+    ],
+    "setting": {
+      "errorLimit": {
+        "record": 0,
+        "percentage": 0
+      },
+      "speed": {
+        "record": 1000,
+        "channel": 1
+      }
+    }
+  }
+}
